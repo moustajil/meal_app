@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mealapp/models/meai.dart';
+import 'package:mealapp/widget/meal_item.dart';
 
 // ignore: must_be_immutable
 class MealScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class MealScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget content = ListView.builder(
       itemCount: meals.length,
-      itemBuilder: (ctx, index) => Text(meals[index].title),
+      itemBuilder: (ctx, index) => MealItem(meal: meals[index]),
     );
     if (meals.isEmpty) {
       content = Center(
