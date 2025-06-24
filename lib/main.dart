@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:mealapp/screens/categories_screens.dart';
+import 'package:mealapp/screens/tabs_screen.dart';
 
 
 final thene = ThemeData(
@@ -18,7 +19,7 @@ class StartApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: thene,
-      home: CategoriesScreens(),
+      home: TabsScreen(),
     );
   }
 }
