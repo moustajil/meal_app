@@ -5,15 +5,17 @@ import 'package:mealapp/widget/meal_item.dart';
 
 // ignore: must_be_immutable
 class MealScreen extends StatelessWidget {
-  MealScreen({super.key,this.title, required this.meals});
+  MealScreen({super.key,this.title, required this.meals,required this.onTaggleFavorite});
 
   String? title;
   final List<Meal> meals;
+  final void Function(Meal meal) onTaggleFavorite;
+
 
   void selectMeal(BuildContext context, Meal meal) {
     Navigator.of(
       context,
-    ).push(MaterialPageRoute(builder: (ctx) => MealDetailScreen(meal: meal)));
+    ).push(MaterialPageRoute(builder: (ctx) => MealDetailScreen(meal: meal,onTaggleFavorite: onTaggleFavorite,)));
   }
 
   @override
